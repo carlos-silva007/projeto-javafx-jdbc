@@ -39,14 +39,14 @@ public class MainViewController implements Initializable{
 	
 	@FXML
 	public void onMenuItemAboutAction() {
-		System.out.println("Item Menu Sobre");
+		loadView("/gui/About.fxml");
 	}
 			
 	@Override
 	public void initialize(URL uri, ResourceBundle rb) {
 				
 	}
-	public void loadView (String absolutName) {
+	public synchronized void loadView (String absolutName) {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absolutName));
